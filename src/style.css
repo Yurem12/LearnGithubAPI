@@ -1,0 +1,15 @@
+#me {
+    margin-left: 15vw;
+    margin-bottom: 10vh;
+    width: 50vw;
+    /* border */
+    border: solid;
+    border: thick double #32a1ce;
+    /* flexbox */
+    display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
