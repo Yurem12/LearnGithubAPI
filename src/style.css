@@ -1,10 +1,32 @@
+/* Variables de couleurs */
+
+:root{
+    --darkModeBody: grey;
+    --darkModeNav: black;
+    --darkModeText: white;
+}
+
+.lightTheme {
+    --darkModeBody: white;
+    --darkModeNav: rgb(49, 49, 49);
+    --darkModeText: black;
+}
+
+/* CSS */
+
+body {
+    background-color: var(--darkmModeBody);
+}
+
 #me {
+    background-color: var(--darkModeNav);
+    color: var(--darkModeNav);
     margin-left: 15vw;
     margin-bottom: 10vh;
     width: 50vw;
     /* border */
     border: solid;
-    border: thick double #32a1ce;
+    border: thick double var(--darkModeText);
     /* flexbox */
     display: flex;
 	flex-direction: column;

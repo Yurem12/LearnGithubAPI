@@ -28,15 +28,16 @@ $(
                 repos.forEach(element => {
                     console.log(element);
                     var repoName = $(`<h1>${element.name}</h1>`);
-                    var langage = $(`<li>${element.language}</li>`);
+                    var infos = $(`<li>${element.description}. Codé principalement en ${element.language}</li>`);
                     var div = $(`<div id="${element.id}"></div>`);
-                    $(div).append(repoName, langage);
+                    $(div).append(repoName, infos);
                     $(`#me`).append(div);
                 });
             })
         }
+
         function affichageDynamique() {
-            var formField = $("#username").val()
+            var formField = $("#username").val();
             console.log(formField);
             $.ajax({
                 method: "GET",
@@ -65,9 +66,9 @@ $(
                 repos.forEach(element => {
                     console.log(element);
                     var repoName = $(`<h1>${element.name}</h1>`);
-                    var langage = $(`<li>${element.language}</li>`);
+                    var infos = $(`<li>${element.description}. Codé principalement en ${element.language}</li>`);
                     var div = $(`<div id="${element.id}"></div>`);
-                    $(div).append(repoName, langage);
+                    $(div).append(repoName, infos);
                     $(`#userDisplay`).append(div);
                 });
             });
