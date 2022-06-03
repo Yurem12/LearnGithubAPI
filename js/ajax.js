@@ -37,6 +37,7 @@ $(
         }
 
         function affichageDynamique() {
+            $("#userDisplay").css("visibility: visible;");
             var formField = $("#username").val();
             console.log(formField);
             $.ajax({
@@ -52,7 +53,7 @@ $(
                         var username = $(`<h1>${data.name} / ${data.login}</h1>`);
                     }
                     if (data.location == null) {
-                        var location = $(`<li>Inconnue</li>`);
+                        var location = $(`<li>emplacement inconnu</li>`);
                     } else {
                         var location = $(`<li>${data.location}</li>`);
                     }

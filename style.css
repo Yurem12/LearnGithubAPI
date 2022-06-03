@@ -2,7 +2,7 @@
 
 :root{
     --darkModeBody: grey;
-    --darkModeNav: black;
+    --darkModeNav: rgb(34, 34, 34);
     --darkModeText: white;
 }
 
@@ -14,24 +14,55 @@
 
 /* CSS */
 
-body {
-    background-color: var(--darkmModeBody);
+@media all and (orientation:portrait) {
+    html {
+        background-color: var(--darkModeNav);
+    }
+    
+    .container {
+        background-color: var(--darkModeBody);
+        color: var(--darkModeNav);
+        margin-left: 15vw;
+        margin-bottom: 10vh;
+        width: 50vw;
+        /* border */
+        border: solid;
+        border: thick double var(--darkModeText);
+        /* flexbox */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    #userDisplay {
+      visibility: hidden;  
+    }
 }
 
-#me {
-    background-color: var(--darkModeNav);
-    color: var(--darkModeNav);
-    margin-left: 15vw;
-    margin-bottom: 10vh;
-    width: 50vw;
-    /* border */
-    border: solid;
-    border: thick double var(--darkModeText);
-    /* flexbox */
-    display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+@media all and (orientation:landscape) {
+    html {
+        background-color: var(--darkModeBody);
+    }
+    
+    .container {
+        background-color: var(--darkModeNav);
+        color: var(--darkModeNav);
+        margin-left: 15vw;
+        margin-bottom: 10vh;
+        width: 50vw;
+        /* border */
+        border: solid;
+        border: thick double var(--darkModeText);
+        /* flexbox */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
 }
+
