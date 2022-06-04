@@ -15,14 +15,20 @@
 /* CSS */
 
 @media all and (orientation:portrait) {
-    html {
+    body {
         background-color: var(--darkModeNav);
+        /* flexbox */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: space-evenly;
     }
     
     .container {
         background-color: var(--darkModeBody);
         color: var(--darkModeNav);
-        margin-left: 15vw;
         margin-bottom: 10vh;
         width: 50vw;
         /* border */
@@ -38,19 +44,39 @@
     }
 
     #userDisplay {
-      visibility: hidden;  
+        visibility: hidden;  
+    }
+
+    .avatar {
+        width:60%;
+        height: 60%;
+        max-width: 60%;
+        max-height: 60%;
+    }
+
+    .repos li, .repos h1 {
+        text-align: center;
+        text-decoration: none;
+        height: 80%;
+        overflow: auto;
     }
 }
 
 @media all and (orientation:landscape) {
-    html {
-        background-color: var(--darkModeBody);
+    body {
+        background-color: var(--darkModeNav);
+        /* flexbox */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: space-evenly;
     }
     
     .container {
-        background-color: var(--darkModeNav);
+        background-color: var(--darkModeBody);
         color: var(--darkModeNav);
-        margin-left: 15vw;
         margin-bottom: 10vh;
         width: 50vw;
         /* border */
@@ -63,6 +89,24 @@
         justify-content: center;
         align-items: center;
         align-content: center;
+    }
+
+    #userDisplay {
+        visibility: hidden;  
+      }
+
+    .avatar {
+        width:60%;
+        height: 60%;
+        max-width: 60%;
+        max-height: 60%;
+    }
+
+    .repos li, .repos h1 {
+        text-align: center;
+        text-decoration: none;
+        height: 80%;
+        overflow: auto;
     }
 }
 

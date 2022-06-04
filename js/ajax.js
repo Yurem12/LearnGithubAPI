@@ -17,7 +17,7 @@ $(
                         var username = $(`<h1>${data.name} / ${data.login}</h1>`);
                     }
                     var location = $(`<li>${data.location}</li>`);
-                    var avatar = $(`<img src="${data.avatar_url}"></img>`);
+                    var avatar = $(`<img src="${data.avatar_url}" class="avatar"></img>`);
                     $(`#me`).append(username, avatar, location, bio);
                 
             })
@@ -29,7 +29,7 @@ $(
                     console.log(element);
                     var repoName = $(`<h1>${element.name}</h1>`);
                     var infos = $(`<li>${element.description}. Codé principalement en ${element.language}</li>`);
-                    var div = $(`<div id="${element.id}"></div>`);
+                    var div = $(`<div id="${element.id}" class="repos"></div>`);
                     $(div).append(repoName, infos);
                     $(`#me`).append(div);
                 });
@@ -37,7 +37,7 @@ $(
         }
 
         function affichageDynamique() {
-            $("#userDisplay").css("visibility: visible;");
+            $("#userDisplay").css("visibility", "visible");
             var formField = $("#username").val();
             console.log(formField);
             $.ajax({
@@ -57,7 +57,7 @@ $(
                     } else {
                         var location = $(`<li>${data.location}</li>`);
                     }
-                    var avatar = $(`<img src="${data.avatar_url}"></img>`);
+                    var avatar = $(`<img src="${data.avatar_url}" class="avatar"></img>`);
                     $(`#userDisplay`).append(username, avatar, location, bio);
             });
             $.ajax({
@@ -67,8 +67,12 @@ $(
                 repos.forEach(element => {
                     console.log(element);
                     var repoName = $(`<h1>${element.name}</h1>`);
-                    var infos = $(`<li>${element.description}. Codé principalement en ${element.language}</li>`);
-                    var div = $(`<div id="${element.id}"></div>`);
+                    if(element.description === null) {
+                        var infos = $(`<li>Codé principalement en ${element.language}</li>`);
+                    } else {
+                        var infos = $(`<li>${element.description}. Codé principalement en ${element.language}</li>`);
+                    }
+                    var div = $(`<div id="${element.id}" class="repos"></div>`);
                     $(div).append(repoName, infos);
                     $(`#userDisplay`).append(div);
                 });
